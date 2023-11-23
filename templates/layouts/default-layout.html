@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow">
+
+    {{with .Meta}}
+        {{with .Title}}
+            <title>{{.}}</title>
+        {{end}}
+        {{with .CanonicalUrl}}
+            <link rel="canonical" href="{{.}}">
+        {{end}}
+        {{with .Description}}
+            <meta name="description" content="{{.}}">
+        {{end}}
+        <meta property="og:site_name" content="Go Web Base"/>
+        <meta property="og:type" content="website"/>
+        {{with .Title}}
+            <meta property="og:title" content="{{.}}">
+        {{end}}
+        {{with .Description}}
+            <meta property="og:description" content="{{.}}">
+        {{end}}
+        {{with .Image}}
+            <meta property="og:image" content="{{.}}">
+        {{end}}
+
+        <meta name="twitter:site" content="@gowebbase">
+        <meta name="twitter:card" content="summary">
+        {{with .Title}}
+            <meta name="twitter:title" content="{{.}}">
+        {{end}}
+        {{with .Description}}
+            <meta name="twitter:description" content="{{.}}">
+        {{end}}
+        {{with .Image}}
+            <meta name="twitter:image" content="{{.}}">
+        {{end}}
+    {{end}}
+
+    <link rel="shortcut icon" type="image/jpg" href="/favicon.ico"/>
+
+    {{ asset "public.css" false}}
+    {{ asset "public.js" true }}
+</head>
+<body class="relative">
+<header hx-boost="true" class="px-5 py-8 max-w-screen-sm mx-auto">
+    <span class="font-bold">Go Web Base</span>
+    <a class="px-2 underline" href="/app">App</a>
+</header>
+<main class="px-5 max-w-screen-sm mx-auto min-h-screen">
+    {{template "content" .}}
+</main>
+<footer class="flex flex-col my-10 max-w-screen-sm mx-auto">
+    Default Footer
+</footer>
+</body>
+</html>

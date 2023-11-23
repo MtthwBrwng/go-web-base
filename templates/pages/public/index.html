@@ -1,0 +1,7 @@
+{{define "content"}}
+    <div id="todo-list" class="flex flex-col gap-2">
+        {{range .Records}}
+            {{template "fragments/todos/card" .}}
+        {{end}}
+    </div>
+{{end}}

@@ -1,0 +1,13 @@
+{
+  "public.css": "http://localhost:3808/dist/css/public.css",
+  "public.js": "http://localhost:3808/dist/js/public.js",
+  "application.css": "http://localhost:3808/dist/css/application.css",
+  "application.js": "http://localhost:3808/dist/js/application.js",
+  "robots.txt": "http://localhost:3808/dist/robots.txt",
+  "public.css.map": "http://localhost:3808/dist/css/public.css.map",
+  "public.js.map": "http://localhost:3808/dist/js/public.js.map",
+  "public.hot-update.js.map": "http://localhost:3808/dist/public.1bd9e8402d9fc8c1e1b6.hot-update.js.map",
+  "application.css.map": "http://localhost:3808/dist/css/application.css.map",
+  "application.js.map": "http://localhost:3808/dist/js/application.js.map",
+  "application.hot-update.js.map": "http://localhost:3808/dist/application.1bd9e8402d9fc8c1e1b6.hot-update.js.map"
+}

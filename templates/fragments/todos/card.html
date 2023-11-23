@@ -1,0 +1,6 @@
+{{block "fragments/todos/card" .}}
+    <div id="strain-card" class="flex justify-between items-center border rounded-lg p-3">
+        <p>{{.Body}}</p>
+        <button hx-delete="/app/todos/{{.ID}}" hx-confirm="Are you sure you'd like to delete {{.Body}}?" hx-target="closest #strain-card" hx-swap="outerHTML swap:1s" class="hover:underline">Delete</button>
+    </div>
+{{end}}

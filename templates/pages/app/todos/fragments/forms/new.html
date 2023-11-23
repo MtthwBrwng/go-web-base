@@ -1,0 +1,6 @@
+{{block "todos/fragments/forms/new" .}}
+    <form class="flex flex-col gap-2" hx-boost="true" hx-post="/app/todos/new" hx-target="#todo-list" hx-swap="afterbegin">
+        <input class="appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="body" name="body" placeholder="Todo Body"/>
+        <button class="border rounded-lg py-1 px-2 hover:bg-neutral-50">Submit</button>
+    </form>
+{{end}}
