@@ -21,6 +21,5 @@ func (s *Service) LoadAppRoutes(router *gin.Engine) {
 	todo := app.Group("/todos/:id")
 	todo.Use(s.TodoHandler.FetcherMiddleware)
 
-	todo.POST("/edit", s.TodoHandler.AppEditActionHandler)
 	todo.DELETE("", s.TodoHandler.AppDeleteActionHandler)
 }

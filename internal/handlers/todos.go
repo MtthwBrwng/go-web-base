@@ -103,17 +103,6 @@ func (h *TodoHandler) AppNewPageHandler(ctx *gin.Context) {
 	})
 }
 
-func (h *TodoHandler) AppEditPageHandler(ctx *gin.Context) {
-	record := h.todoService.GetResourceFromContext(ctx)
-
-	ctx.HTML(http.StatusOK, "app/todos/edit", gin.H{
-		"Record": record,
-		"Meta": types.Meta{
-			Title: "Edit Todo",
-		},
-	})
-}
-
 /*
 	Action Handlers
 */
@@ -133,29 +122,7 @@ func (h *TodoHandler) AppNewActionHandler(ctx *gin.Context) {
 		return
 	}
 
-	ctx.HTML(http.StatusOK, "fragments/todos/card", gin.H{
-		"Body": record.Body,
-	})
-}
-
-func (h *TodoHandler) AppEditActionHandler(ctx *gin.Context) {
-	record := h.todoService.GetResourceFromContext(ctx)
-
-	var input types.EditTodoFormInput
-	err := ctx.Bind(&input)
-	if err != nil {
-		log.Println(err)
-	}
-
-	_, err = h.todoService.Update(ctx, record, input)
-	if err != nil {
-		ctx.HTML(http.StatusOK, "todos/fragments/forms/edit", gin.H{
-			"globalError": "Internal Server Error",
-		})
-		return
-	}
-
-	ctx.Header("HX-Redirect", "/app/todos")
+	ctx.HTML(http.StatusOK, "fragments/todos/card", record)
 }
 
 func (h *TodoHandler) AppDeleteActionHandler(ctx *gin.Context) {
